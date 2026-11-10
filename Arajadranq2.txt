@@ -1,0 +1,104 @@
+1. ՎԱՏ ՊՐՈՄՊՏ (Մեկ կարճ նախադասություն)
+
+Պրոմպտ: «Պատրաստիր կոնտակտների ձև՝ անուն, email, հաղորդագրություն դաշտերով html-ով ու css-ով։»
+
+<form>
+  <input type="text" placeholder="Անուն"><br>
+  <input type="email" placeholder="Email"><br>
+  <textarea placeholder="Հաղորդագրություն"></textarea><br>
+  <button type="submit">Ուղարկել</button>
+</form>
+<style>
+  form { width: 300px; margin: 20px; }
+  input, textarea { width: 100%; margin-bottom: 10px; padding: 5px; }
+</style>
+
+2. ՄԻՋԻՆ ՊՐՈՄՊՏ (Խնդիրը և մի քանի պահանջ)
+
+Պրոմպտ: «Ստեղծիր կոնտակտների բաժին սրճարանի կայքի համար: Այն պետք է ունենա Անուն, Email և Հաղորդագրություն դաշտերը: Դիզայնը պետք է լինի ժամանակակից, իսկ գույները հարմար լինեն սուրճի թեմատիկային: Ապահովիր, որ հեռախոսով բացելիս էլ սիրուն երևա:»
+
+<div class="contact-container">
+  <h2>Հետադարձ Կապ</h2>
+  <form class="coffee-form">
+    <input type="text" placeholder="Ձեր Անունը" required>
+    <input type="email" placeholder="Էլ. փոստի հասցե" required>
+    <textarea placeholder="Ձեր հաղորդագրությունը..." rows="5" required></textarea>
+    <button type="submit">Ուղարկել Նամակը</button>
+  </form>
+</div>
+<style>
+  .contact-container { max-width: 500px; margin: 40px auto; padding: 20px; background: #fdfaf6; border-radius: 8px; text-align: center; }
+  h2 { color: #4a3525; margin-bottom: 20px; }
+  .coffee-form input, .coffee-form textarea { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #c6b8ae; border-radius: 4px; }
+  .coffee-form button { background: #6f4e37; color: white; border: none; padding: 12px 20px; cursor: pointer; width: 100%; font-size: 16px; }
+  .coffee-form button:hover { background: #4a3525; }
+</style>
+
+3. ԼԱՎ ՊՐՈՄՊՏ (Բոլոր 5 բաղադրիչներով)
+
+Պրոմպտ:
+• Դեր: Դուք UX/UI ավագ դիզայներ և Front-End ծրագրավորող եք:
+• Կոնտեքստ: Մենք կառուցում ենք «Third Wave» ոճի «Արևահատ» սրճարանի Landing Page-ը, որն ունի հանգիստ, էսթետիկ մթնոլորտ։
+• Խնդիր: Գրել կայքի կոնտակտների բաժնի (Contact Form) HTML և CSS կոդը, որն ունի երեք դաշտ՝ Անուն, Email և Հաղորդագրություն։
+• Սահմանափակումներ: Չօգտագործել JavaScript կամ արտաքին framework-ներ: Գունային գամման պետք է լինի հողեղեն՝ կաթնագույն ֆոն (#FDFBF7), մուգ սուրճի երանգով տեքստեր (#3D2C20) և կարամելային շեշտադրումներ (#D4A373): Բոլոր դաշտերը պետք է ունենան սահուն :focus վիճակ, իսկ ձևը լինի 100% ադապտիվ և հասանելի (accessible)։
+• Ֆորմատ: Տրամադրել մաքուր HTML5 կոդի բլոկ (<section id="contact">)՝ ներդրված CSS-ով և հայերեն մեկնաբանություններով։
+
+<!-- ԿՈՆՏԱԿՏՆԵՐԻ ՍԵՄԱՆՏԻԿ ԲԱԺԻՆ -->
+<section id="contact" class="contact-section">
+  <div class="form-wrapper">
+    <h2 class="form-title">Գրեք Մեզ</h2>
+    <p class="form-subtitle">Ունե՞ք հարցեր կամ առաջարկներ։ Լրացրեք ձևը, և մեր թիմը կապ կհաստատի ձեզ հետ։</p>
+    
+    <form action="#" method="POST" class="custom-form">
+      <div class="input-group">
+        <label for="usr-name">Ձեր Անունը</label>
+        <input type="text" id="usr-name" name="name" required placeholder="Անուն Ազգանուն">
+      </div>
+      
+      <div class="input-group">
+        <label for="usr-email">Էլ. հասցե (Email)</label>
+        <input type="email" id="usr-email" name="email" required placeholder="example@mail.com">
+      </div>
+      
+      <div class="input-group">
+        <label for="usr-message">Հաղորդագրություն</label>
+        <textarea id="usr-message" name="message" rows="5" required placeholder="Գրեք ձեր հաղորդագրությունը այստեղ..."></textarea>
+      </div>
+      
+      <button type="submit" class="form-submit-btn">Ուղարկել Նամակը</button>
+    </form>
+  </div>
+</section>
+
+<style>
+  /* ՈՃԵՐԻ ՕՊՏԻՄԱԼԱՑՈՒՄ */
+  .contact-section { padding: 80px 20px; background-color: #FDFBF7; display: flex; justify-content: center; }
+  .form-wrapper { max-width: 550px; width: 100%; background: #FFFFFF; padding: 40px; border-radius: 8px; box-shadow: 0 10px 30px rgba(61, 44, 32, 0.03); border: 1px solid rgba(61, 44, 32, 0.05); }
+  .form-title { font-size: 28px; color: #3D2C20; margin-bottom: 10px; text-align: center; }
+  .form-subtitle { font-size: 14px; color: #5C4A3C; text-align: center; margin-bottom: 30px; line-height: 1.5; }
+  .input-group { display: flex; flex-direction: column; margin-bottom: 20px; }
+  .input-group label { font-size: 14px; font-weight: 600; color: #3D2C20; margin-bottom: 8px; }
+  .input-group input, .input-group textarea { padding: 12px; border: 1px solid rgba(61, 44, 32, 0.15); border-radius: 4px; font-size: 15px; color: #3D2C20; background-color: #FDFBF7; transition: all 0.3s ease; }
+  
+  /* Սահուն :focus վիճակ, որը նշված էր սահմանափակումներում */
+  .input-group input:focus, .input-group textarea:focus { outline: none; border-color: #D4A373; box-shadow: 0 0 0 3px rgba(212, 163, 115, 0.15); }
+  
+  .form-submit-btn { background-color: #3D2C20; color: #FDFBF7; border: none; padding: 14px; font-size: 16px; font-weight: 700; border-radius: 4px; cursor: pointer; width: 100%; transition: background-color 0.3s ease; text-transform: uppercase; letter-spacing: 1px; }
+  .form-submit-btn:hover { background-color: #D4A373; color: #3D2C20; }
+  
+  /* Ադապտիվություն փոքր էկրանների համար */
+  @media (max-width: 480px) { .form-wrapper { padding: 25px 20px; } .form-title { font-size: 24px; } }
+</style>
+
+
+ՀԱՄԵՄԱՏՈՒԹՅՈՒՆ
+
+Վատ պրոմպտ։ Կոդի կառուցվածք կոպիտ է, բացակայում են սեմանտիկ թեգերը, չկան label-ներ (վատ է հասանելիության համար)։ Դիզայնը և Էսթետիկան բացակայում են։ Ստանդարտ, չոր, անշուք դաշտեր են՝ առանց գունային մտածվածության։ 
+
+Միջին պրոմպտ։ Ունի բազային կառուցվածք, բայց օգտագործում է միայն div-եր։ Ունի գունային երանգներ, բայց տեսքը շատ պարզունակ է ու ընդհանրական։
+
+Լավ պրոմպտ։ Օգտագործում է HTML5 սեմանտիկ <section>, ունի ճիշտ կապված label և id զույգեր։ Էլեգանտ է, ունի ստվերներ, տեքստի ճիշտ հիերարխիա, սիրուն ֆոն և ժամանակակից սահմաններ։
+
+
+
+
